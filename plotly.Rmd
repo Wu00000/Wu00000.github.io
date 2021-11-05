@@ -1,0 +1,13 @@
+---
+title: "Plotly"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+---
+Click [here](index.html) and go back to the index page.
+
+This page is about making some plotly examples.
+
+-----------------------------------------------
+

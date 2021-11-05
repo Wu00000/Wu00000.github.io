@@ -1,5 +1,5 @@
 ---
-title: "My resume"
+title: "Resume"
 author: "Qihang Wu"
 date: "Updated on Nov 5, 2021"
 output: 

@@ -5,6 +5,9 @@ navbar:
   right:
     - text: "My Resume"
       href: resume.html
+    - text: "Plotly"
+      icon: fa-puzzle-piece fa-lg
+      href: plotly.html
     - icon: fa-envelope fa-lg
       href: mailto:<qw2331@columbia.edu>
     - icon: fa-github fa-lg
