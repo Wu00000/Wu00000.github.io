@@ -9,5 +9,6 @@ output:
 
 # Welcome to Qihang's website!!
 
-![](images/beautiful view.jpg)
+<img src="images/pic1.jpg" style = "width:75%">
+
 Here is [more](resume.html) about me!

@@ -1,10 +1,81 @@
 ---
 title: "My resume"
+author: "Qihang Wu"
+date: "Nov 5, 2021"
 output: 
   html_document:
     toc: true
     toc_float: true
-    theme: cerulean
+    theme: united
 ---
 
-Let's go back to the [index](index.html) page.
+Click [here](index.html) and go back to the index page.
+
+----------------------------------------------
+
+## Education
+**Columbia University**  
+**2021.09 - Now**
+
+- School: Mailman School of Public Health  
+- Degree: Master  
+- Major: Biostatisics  
+  
+**University of Davis**  
+**2018.09 - 2019.06**
+
+- School: College of Biological Sciences  
+- Degree: Exchange 
+- Major: Biotechnology  
+- Courses: Python, Data Structure, Advanced Molecular Biology  
+  
+**Fuzhou University**  
+**2015.09 - 2018.06**
+
+- School: School of Biological Science and Engineering  
+- Degree: Bachelor  
+- Major: Biotechnology  
+- Courses: Advanced Mathematics, Linear Algebra, Probability, Experimental Design and Data Treatment  
+
+## Work & Project Experience
+**Yidu Cloud Technology**  
+**2021.04 - 2021.09**
+
+- Location: Shanghai, China  
+- Position: Insight Consulting Intern  
+- Main Job:  
+  - Organized materials about medical industries and diseases;  
+  - Analyzed future development trends;  
+  - Made a white book about Chronic lymphoma leukemia (CLL) and Small lymphocytic lymphoma (SLL)  
+    
+**Sanofi**  
+**2020.12 - 2021.03**
+
+- Location: Shanghai, China  
+- Position: Business Operation Intern  
+- Main Job:  
+  - Used QlikView and Excel to track sale progress from regional managers and area directors level, visualize data, and complete weekly reports;  
+  - Assessed sale targets, estimation, and achievements for evey area;  
+  - Used Excel and Python to clean data and analyze the time it took for 543 hospitals to have monthly Lantus sales of 300 and more;  
+  - Used Excel to display sale progress from several dimensions and provide solid advice for every area director  
+  
+**Center for Disease Control and Prevention**  
+**2019.09 - 2019.12**
+
+- Location: Quanzhou, China  
+- Position: Chronic Disease Department Assistant  
+- Main Job:  
+  - Collected data from hospitals and health clinics and draw different chars for further analysis. This includes the average life span, sequence of death cause, tumor spectrum, and more;  
+  - Monitored the epidemic situation of Dengue Fever and promote preventive measures  
+
+## Skills & Others
+**Skills: **
+Excel, MySql, Python and basic machine learning models  
+**Interests:  **
+Reading, Piano, Film, Outdoor Sports
+
+<img src="images/pic2.jpg" style = "width:75%">
+
+-------------------------------------------------
+
+<a href = "#top" target = "_self">Back to top</a>
