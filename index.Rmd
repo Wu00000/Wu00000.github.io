@@ -1,10 +1,11 @@
 ---
-title: "All good things can happen here..."
+title: ""
 output: 
   html_document:
     toc: true
     toc_float: true
-    theme: united
+    includes:
+      in_header: header-image.html
 ---
 
 ## Welcome to Qihang's website!!
@@ -12,6 +13,23 @@ output:
 ------------------------------------------------------------------
 I can link to useful things like [Google](https://www.google.com/)
 
-<img src="images/pic1.jpg" style = "width:75%">
+<img src="images/pic1.jpg" style = "width:80%">  
+
+<font size="1"> Photo by <u>[Lachlan Dempsey](https://unsplash.com/@lachlanjdempsey)</u>
+on <u>[Unsplash](https://unsplash.com/)</u></font>
+
+## Other things...
+I like watching many kinds of movies, including Sci-Fi, Action, and Thriller...
+
+## More about me!!
 
 Here is [more](resume.html) about me!
+
+
+<font size = "3">**Qihang Wu**</font>  
+<span style = "color: gray">Master candidate in Biostatistics</span>  
+dataviz, rstats, he/his    
+[<i class = "fab fa-linkedin"></i>](https://www.linkedin.com/in/qihang-wu-2b1b45193/)
+[<i class = "fab fa-twitter"></i>](https://twitter.com/QihangWu1)
+[<i class = "fab fa-facebook-square"></i>](https://www.facebook.com/qihang.wu.56/)
+
