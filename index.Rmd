@@ -1,13 +1,16 @@
 ---
-title: "An awesome website"
+title: "All good things can happen here..."
 output: 
   html_document:
     toc: true
     toc_float: true
-    theme: cerulean
+    theme: united
 ---
 
-# Welcome to Qihang's website!!
+## Welcome to Qihang's website!!
+
+------------------------------------------------------------------
+I can link to useful things like [Google](https://www.google.com/)
 
 <img src="images/pic1.jpg" style = "width:75%">
 

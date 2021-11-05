@@ -1,0 +1,13 @@
+name: "Yay internet!"
+output_dir: "."
+navbar:
+  title: "Home"
+  right:
+    - text: "My resume"
+      href: resume.html
+    - icon: fa-envelope fa-lg
+      href: mailto:<qw2331@columbia.edu>
+    - icon: fa-github fa-lg
+      href: http://github.com/Wu00000/
+output:
+  html_document
