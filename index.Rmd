@@ -5,7 +5,7 @@ output:
     toc: true
     toc_float: true
     includes:
-      in_header: [favicon.html, header-image.html]
+      in_header: header-image.html
 ---
 
 ## Welcome to Qihang's website!!
