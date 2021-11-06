@@ -78,7 +78,7 @@ ins_df %>%
     type = "bar", colors = "viridis"
   ) %>% 
   layout(
-    title = "Top 10% commodities sales volume ranking",
+    title = "Top 10% commodities sales ranking",
     xaxis = list(title = "Sales volume"),
     yaxis = list(title = "Product")
   )
@@ -120,6 +120,7 @@ ins_df %>%
   ) %>% 
   add_histogram2d() %>% 
   layout(
+    title = "Number of orders distribution",
     xaxis = list(title = "Day of a week"),
     yaxis = list(title = "Hours of a day")
   )
