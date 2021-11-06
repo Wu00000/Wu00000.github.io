@@ -13,14 +13,14 @@ Click [here](index.html) and go back to the index page.
 ----------------------------------------------
 
 ## Education
-**Columbia University**  
+**Columbia University -- New York, USA**  
 **2021.09 - Now**
 
 - School: Mailman School of Public Health  
 - Degree: Master  
 - Major: Biostatisics  
   
-**University of Davis**  
+**University of Davis -- California, USA**  
 **2018.09 - 2019.06**
 
 - School: College of Biological Sciences  
@@ -28,7 +28,7 @@ Click [here](index.html) and go back to the index page.
 - Major: Biotechnology  
 - Courses: Python, Data Structure, Advanced Molecular Biology  
   
-**Fuzhou University**  
+**Fuzhou University -- Fuzhou, China**  
 **2015.09 - 2018.06**
 
 - School: School of Biological Science and Engineering  
@@ -77,6 +77,9 @@ Excel, MySql, Python and basic machine learning models
 **Interests:  **
 Reading, Piano, Film, Outdoor Sports
 
+<br>
+<br>
+<br>
 
 <img src="images/pic2.jpg" style = "width:75%">  
 <font size="1"> Photo by <u>[Franki Chamaki](https://unsplash.com/@franki)</u>
@@ -85,12 +88,13 @@ on <u>[Unsplash](https://unsplash.com/)</u></font>
 
 -------------------------------------------------
 
-<a href = "#top" target = "_self">Back to top</a>
+<font size="5"><a href = "#top" target = "_self">Back to top</a></font>
 
 
 <font size = "3">**Qihang Wu**</font>  
 <span style = "color: gray">Master candidate in Biostatistics</span>  
-dataviz, rstats, he/his    
-[<i class = "fab fa-linkedin"></i>](https://www.linkedin.com/in/qihang-wu-2b1b45193/)
-[<i class = "fab fa-twitter"></i>](https://twitter.com/QihangWu1)
-[<i class = "fab fa-facebook-square"></i>](https://www.facebook.com/qihang.wu.56/)
+dataviz, rstats
+
+[<i class = "fab fa-linkedin" style="font-size: 2em"></i>](https://www.linkedin.com/in/qihang-wu-2b1b45193/)
+[<i class = "fab fa-twitter" style="font-size: 2em"></i>](https://twitter.com/QihangWu1)
+[<i class = "fab fa-facebook-square" style="font-size: 2em"></i>](https://www.facebook.com/qihang.wu.56/)

@@ -10,31 +10,61 @@ output:
 
 ## Welcome to Qihang's website!!
 
-<img src="images/pic1.jpg" style = "width:80%">  
+<br>
+<br>
+
+<img src="images/pic1.jpg" style="width:80%">  
 
 <font size="1"> Photo by <u>[Lachlan Dempsey](https://unsplash.com/@lachlanjdempsey)</u>
 on <u>[Unsplash](https://unsplash.com/)</u></font>
 
-Feel free to search something using [Google](https://www.google.com/)
 
 ----------------------------------------------------------------------
 
-## Other things...
-I enjoy piano music...  
-Here is a pianist [Ludovico Einaudi](https://www.youtube.com/channel/UCQxsahIsaO7_nDwVlFRMQiA) 
-YouTube channel!
+## A huge movie fan... 
+
+I enjoy many genres of movies, including Sci-Fi, Action, Thriller, and more!
+
+**Also, there are some awesome movie soundtrack...**
+
+Here is an Italian pianist and composer 
+[Ludovico Einaudi](https://www.youtube.com/channel/UCQxsahIsaO7_nDwVlFRMQiA) 
+and his YouTube channel!
+
+Another one is 
+[Hans Zimmer](https://www.youtube.com/channel/UCJeBQabyLa_FvMxb6G67lkw), 
+a German film score composer. He composed music for many famous films like 
+*The Lion King*, *the Pirates of the Caribbean series*, *Inception*, and *Interstellar*, etc. 
+Let's check them out!! [<i class="fab fa-imdb" style="color:#FFC300;font-size: 1.5em"></i>](https://www.imdb.com/?ref_=nv_home)
+
+<img src="images/pic4.jpeg" style="width:265px;height:400px">
+<img src="images/pic5.jpeg" style="width:265px;height:400px">
+<img src="images/pic6.jpeg" style="width:265px;height:400px">
 
 ----------------------------------------------------------------------
 
-## More about me!!
+## A travel enthusiast!!
 
-Here is [more](resume.html) about me!
+I have been to San Francisco and Lake Tahoe in California, check these places out!!
 
+Feel free to use [Google](https://www.google.com/) and [Airbnb](https://www.airbnb.com/) here!
+
+----------------------------------------------------------------------
+
+## Stay tuned!!
+
+Here is my [resume](resume.html) !
+
+<br>
+<br>
+<br>
+<br>
 
 <font size="3">**Qihang Wu**</font>  
 <span style="color: gray">Master candidate in Biostatistics</span>  
-dataviz, rstats, he/his    
-[<i class="fab fa-linkedin"></i>](https://www.linkedin.com/in/qihang-wu-2b1b45193/)
-[<i class="fab fa-twitter"></i>](https://twitter.com/QihangWu1)
-[<i class="fab fa-facebook-square"></i>](https://www.facebook.com/qihang.wu.56/)
+dataviz, rstats   
+
+[<i class="fab fa-linkedin" style="font-size: 2em"></i>](https://www.linkedin.com/in/qihang-wu-2b1b45193/)
+[<i class="fab fa-twitter" style="font-size: 2em"></i>](https://twitter.com/QihangWu1)
+[<i class="fab fa-facebook-square" style="font-size: 2em"></i>](https://www.facebook.com/qihang.wu.56/)
 

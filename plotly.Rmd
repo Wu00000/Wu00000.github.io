@@ -120,7 +120,7 @@ ins_df %>%
   group_by(order_dow_new, order_hour_of_day) %>% 
   summarize(num = n()) %>% 
   plot_ly(
-    x = ~order_dow_new, y = ~order_hour_of_day, alpha = .8, colors = "viridis"
+    x = ~order_dow_new, y = ~order_hour_of_day, colors = "viridis"
   ) %>% 
   add_histogram2d() %>% 
     layout(

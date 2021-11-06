@@ -49,7 +49,7 @@
   width: 100% !important;
 }
 
-/* No toc on mobile */
+/* No TOC on mobile */
 
 @media screen and (max-width: 767px) {
   
@@ -64,4 +64,18 @@
   .bottom-text {
     font-size: 40px;
   }
+}
+
+/*---------Links--------*/
+
+a {
+  color: #0FA2E9;
+}
+
+a:hover {
+  color: #074DF3;
+}
+
+.imgContainer {
+  float: left;
 }
