@@ -17,22 +17,9 @@ library(p8105.datasets)
 library(plotly)
 
 knitr::opts_chunk$set(
-  fig.width = 6,
-  fig.asp = .6,
-  out.width = "90%",
   message = FALSE,
   warning = FALSE
 )
-
-theme_set(theme_minimal() + theme(legend.position = "bottom"))
-
-options(
-  ggplot2.continuous.colour = "viridis",
-  ggplot2.continuous.fill = "viridis"
-)
-
-scale_colour_discrete = scale_colour_viridis_d
-scale_fill_discrete = scale_fill_viridis_d
 ```
 
 ## Import the data
@@ -64,8 +51,82 @@ top1_cust <-
 ins_df <- 
   ins_raw %>% 
   filter(user_id %in% pull(top1_cust, user_id)) %>% 
-  select(2:5, 8, 9, 11, 12, 14) %>% 
+  select(1:5, 8, 9, 11, 12, 14) %>% 
   mutate(
     order_dow_new = weekdays(as.Date("2021-10-31") + 0:6)[order_dow + 1]
   )
 ```
+
+## Make a barplot
+
+```{r}
+# Sales Ranking in top 10% commodities
+top10_comd <- 
+  ins_df %>% 
+  group_by(product_name) %>% 
+  summarize(num = n()) %>% 
+  arrange(desc(num)) %>% 
+  mutate(
+    cum = cumsum(num)
+  ) %>% 
+  filter(cum <= floor(nrow(ins_df) * .1))
+
+# Make barplot
+ins_df %>% 
+  filter(product_name %in% pull(top10_comd, product_name)) %>% 
+  group_by(product_name) %>% 
+  summarize(num = n()) %>% 
+  mutate(
+    product_name = fct_reorder(product_name, num)
+  ) %>% 
+  plot_ly(
+    x = ~num, y = ~product_name, color = ~product_name,
+    type = "bar", colors = "viridis"
+  ) %>% 
+  layout(
+    title = "Top 10% Commodities Sales Volume Ranking",
+    xaxis = list(title = "Sales Volume"),
+    yaxis = list(title = "Product")
+  )
+```
+
+## Make a boxplot
+
+```{r}
+dow_level <- 
+  c("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday")
+
+ins_df %>% 
+  group_by(order_dow_new, order_id) %>% 
+  summarize(num = n()) %>% 
+  mutate(
+    order_dow_new = factor(order_dow_new, levels = dow_level)
+  ) %>% 
+  plot_ly(
+    x = ~order_dow_new, y = ~num, color = ~order_dow_new,
+    type = "box", colors = "viridis"
+  ) %>% 
+  layout(
+    title = "Number of items per order during a week",
+    xaxis = list(title = "Day of a Week"),
+    yaxis = list(title = "Number of Items per Order")
+  )
+```
+
+## Make a 2D histogram
+
+```{r}
+ins_df %>% 
+  group_by(order_dow_new, order_hour_of_day) %>% 
+  summarize(num = n()) %>% 
+  plot_ly(
+    x = ~order_dow_new, y = ~order_hour_of_day, alpha = .8, colors = "viridis"
+  ) %>% 
+  add_histogram2d() %>% 
+    layout(
+    title = "Number of orders per hour during a day",
+    xaxis = list(title = "Day of a week"),
+    yaxis = list(title = "Hours of a day")
+  )
+```
+
