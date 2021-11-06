@@ -7,7 +7,65 @@ output:
 ---
 Click [here](index.html) and go back to the index page.
 
-This page is about making some plotly examples.
+This page is about making some plotly examples of dataset `Instacart`.
 
 -----------------------------------------------
 
+```{r setup, message = FALSE, echo = FALSE}
+library(tidyverse)
+library(p8105.datasets)
+library(plotly)
+
+knitr::opts_chunk$set(
+  fig.width = 6,
+  fig.asp = .6,
+  out.width = "90%",
+  message = FALSE,
+  warning = FALSE
+)
+
+theme_set(theme_minimal() + theme(legend.position = "bottom"))
+
+options(
+  ggplot2.continuous.colour = "viridis",
+  ggplot2.continuous.fill = "viridis"
+)
+
+scale_colour_discrete = scale_colour_viridis_d
+scale_fill_discrete = scale_fill_viridis_d
+```
+
+## Import the data
+
+```{r}
+data("instacart")
+ins_raw <- instacart
+```
+
+## Data cleaning
+
+```{r}
+# Find 1% * Total Sale Volume (TSV)
+num1 <- 
+  floor(nrow(ins_raw) * .01)
+
+# Find customers who contributed 1% of TSV
+top1_cust <- 
+  ins_raw %>% 
+  janitor::clean_names() %>% 
+  group_by(user_id) %>% 
+  summarize(num = n()) %>% 
+  arrange(desc(num)) %>% 
+  mutate(
+    cum = cumsum(num)
+  ) %>% 
+  filter(cum <= num1)
+
+ins_df <- 
+  ins_raw %>% 
+  filter(user_id %in% pull(top1_cust, user_id)) %>% 
+  select(2:5, 8, 9, 11, 12, 14) %>% 
+  mutate(
+    order_dow_new = weekdays(as.Date("2021-10-31") + 0:6)[order_dow + 1]
+  )
+```
