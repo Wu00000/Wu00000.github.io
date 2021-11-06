@@ -1,8 +1,8 @@
+/* Large hero image at top of index page */
 
 .header-image {
     position: relative;
     margin-bottom: 2em;
-    /* liner gradient tints the image darker for readability*/
     background-image: url(images/pic3.jpg); 
     height: 400px;
     background-size: cover;
@@ -36,9 +36,10 @@
   font-weight: bold;
 }
 
+/* Makes TOC sticky */
+
 .row-fluid{
   display: flex;
-
 }
 
 .tocify {
@@ -46,4 +47,21 @@
   position: sticky; 
   top: 120px;
   width: 100% !important;
+}
+
+/* No toc on mobile */
+
+@media screen and (max-width: 767px) {
+  
+  .col-xs-12.col-sm-4.col-md-3 {
+    display: none;
+  }
+
+  .top-text {
+    font-size: 25px;
+  }
+  
+  .bottom-text {
+    font-size: 40px;
+  }
 }
