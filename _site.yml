@@ -4,6 +4,7 @@ navbar:
   title: "Home"
   right:
     - text: "My Resume"
+      icon: fa-file fa-lg
       href: resume.html
     - text: "Plotly"
       icon: fa-puzzle-piece fa-lg
@@ -17,5 +18,7 @@ navbar:
       href: http://github.com/Wu00000/
 output:
   html_document:
+    includes:
+      in_header: favicon.html
     theme: united
     css: style.css
