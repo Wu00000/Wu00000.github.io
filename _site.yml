@@ -8,6 +8,9 @@ navbar:
     - text: "Plotly"
       icon: fa-puzzle-piece fa-lg
       href: plotly.html
+    - text: "Dashboard"
+      icon: fa-tachometer fa-lg
+      href: dashboard.html
     - icon: fa-envelope fa-lg
       href: mailto:<qw2331@columbia.edu>
     - icon: fa-github fa-lg

@@ -1,0 +1,127 @@
+---
+title: "Dashboard"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    source_code: embed
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+library(tidyverse)
+library(p8105.datasets)
+library(plotly)
+```
+
+## Import the data
+
+```{r}
+data("instacart")
+ins_raw <- instacart
+```
+
+## Data cleaning
+
+```{r}
+# Find 1% * Total Sale Volume (TSV)
+num1 <- 
+  floor(nrow(ins_raw) * .01)
+
+# Find customers who contributed 1% of TSV
+top1_cust <- 
+  ins_raw %>% 
+  janitor::clean_names() %>% 
+  group_by(user_id) %>% 
+  summarize(num = n()) %>% 
+  arrange(desc(num)) %>% 
+  mutate(
+    cum = cumsum(num)
+  ) %>% 
+  filter(cum <= num1)
+
+ins_df <- 
+  ins_raw %>% 
+  filter(user_id %in% pull(top1_cust, user_id)) %>% 
+  select(1:5, 8, 9, 11, 12, 14) %>% 
+  mutate(
+    order_dow_new = weekdays(as.Date("2021-10-31") + 0:6)[order_dow + 1]
+  )
+```
+
+Column {data-width=9500}
+-----------------------------------------------------------------------
+
+### Chart A
+
+```{r}
+# Sales Ranking in top 10% commodities
+top10_comd <- 
+  ins_df %>% 
+  group_by(product_name) %>% 
+  summarize(num = n()) %>% 
+  arrange(desc(num)) %>% 
+  mutate(
+    cum = cumsum(num)
+  ) %>% 
+  filter(cum <= floor(nrow(ins_df) * .1))
+
+# Make barplot
+ins_df %>% 
+  filter(product_name %in% pull(top10_comd, product_name)) %>% 
+  group_by(product_name) %>% 
+  summarize(num = n()) %>% 
+  mutate(
+    product_name = fct_reorder(product_name, num)
+  ) %>% 
+  plot_ly(
+    x = ~num, y = ~product_name, color = ~product_name,
+    type = "bar", colors = "viridis"
+  ) %>% 
+  layout(
+    title = "Top 10% commodities sales volume ranking",
+    xaxis = list(title = "Sales volume"),
+    yaxis = list(title = "Product")
+  )
+```
+
+Column {data-width=3000}
+-----------------------------------------------------------------------
+
+### Chart B
+
+```{r}
+dow_level <- 
+  c("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday")
+
+ins_df %>% 
+  group_by(order_dow_new, order_id) %>% 
+  summarize(num = n()) %>% 
+  mutate(
+    order_dow_new = factor(order_dow_new, levels = dow_level)
+  ) %>% 
+  plot_ly(
+    x = ~order_dow_new, y = ~num, color = ~order_dow_new,
+    type = "box", colors = "viridis"
+  ) %>% 
+  layout(
+    xaxis = list(title = "Day of a week"),
+    yaxis = list(title = "Number of items per order")
+  )
+```
+
+### Chart C
+
+```{r}
+ins_df %>% 
+  group_by(order_dow_new, order_hour_of_day) %>% 
+  summarize(num = n()) %>% 
+  plot_ly(
+    x = ~order_dow_new, y = ~order_hour_of_day, alpha = .8, colors = "viridis"
+  ) %>% 
+  add_histogram2d() %>% 
+  layout(
+    xaxis = list(title = "Day of a week"),
+    yaxis = list(title = "Hours of a day")
+  )
+```
+
