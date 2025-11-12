@@ -14,7 +14,7 @@
 
 <title>Resume</title>
 
-<script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.17/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/united.min.css" rel="stylesheet" />
@@ -63,6 +63,7 @@ if (window.hljs) {
 
 
 
+
 <link rel="stylesheet" href="style.css" type="text/css" />
 
 
@@ -87,6 +88,9 @@ button.code-folding-btn:focus {
 }
 summary {
   display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
 }
 pre code {
   padding: 0;
@@ -144,11 +148,15 @@ $(document).ready(function () {
     href = "index.html";
   var menuAnchor = $('a[href="' + href + '"]');
 
-  // mark it active
-  menuAnchor.tab('show');
-
-  // if it's got a parent navbar menu mark it active as well
-  menuAnchor.closest('li.dropdown').addClass('active');
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
 
   // Navbar adjustments
   var navHeight = $(".navbar").first().height() + 15;
@@ -177,8 +185,8 @@ $(document).ready(function () {
   border-radius: 4px;
 }
 
-.tabset-dropdown > .nav-tabs > li.active:before {
-  content: "";
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
   font-family: 'Glyphicons Halflings';
   display: inline-block;
   padding: 10px;
@@ -186,16 +194,9 @@ $(document).ready(function () {
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "&#xe258;";
-  border: none;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "";
+  content: "\e258";
   font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
+  border: none;
 }
 
 .tabset-dropdown > .nav-tabs > li.active {
@@ -312,7 +313,7 @@ div.tocify {
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -368,44 +369,35 @@ div.tocify {
 
 <h1 class="title toc-ignore">Resume</h1>
 <h4 class="author">Qihang Wu</h4>
-<h4 class="date">Updated on Nov 5, 2021</h4>
+<h4 class="date">Updated on Nov 11, 2025</h4>
 
 </div>
 
 
-<p>Click <a href="index.html">here</a> and go back to the index page.</p>
+<p>Click <a href="index.html">here</a> and go back to the index
+page.</p>
 <hr />
 <div id="education" class="section level2">
 <h2>Education</h2>
-<p><strong>Columbia University – New York, USA</strong><br />
-<strong>2021.09 - Now</strong></p>
+<p><strong>The George Washington University – Washington, DC</strong>
+<strong>Aug 2023 - Now</strong></p>
 <ul>
-<li>School: Mailman School of Public Health<br />
-</li>
-<li>Degree: Master<br />
-</li>
-<li>Major: Biostatisics</li>
+<li>Ph.D. in Biostatistics</li>
 </ul>
-<p><strong>University of Davis – California, USA</strong><br />
-<strong>2018.09 - 2019.06</strong></p>
+<p><strong>Columbia University – New York, NY</strong><br />
+<strong>Aug 2021 - May 2023</strong></p>
 <ul>
-<li>School: College of Biological Sciences<br />
-</li>
-<li>Degree: Exchange</li>
-<li>Major: Biotechnology<br />
-</li>
-<li>Courses: Python, Data Structure, Advanced Molecular Biology</li>
+<li>M.S. in Biostatistics</li>
+</ul>
+<p><strong>University of California at Davis – Davis, CA</strong>
+<strong>Sep 2018 - Jun 2019</strong></p>
+<ul>
+<li>Exchange Program</li>
 </ul>
 <p><strong>Fuzhou University – Fuzhou, China</strong><br />
-<strong>2015.09 - 2018.06</strong></p>
+<strong>Sep 2015 - Jun 2018</strong></p>
 <ul>
-<li>School: School of Biological Science and Engineering<br />
-</li>
-<li>Degree: Bachelor<br />
-</li>
-<li>Major: Biotechnology<br />
-</li>
-<li>Courses: Advanced Mathematics, Linear Algebra, Probability, Experimental Design and Data Treatment</li>
+<li>B.S. in Biotechnology</li>
 </ul>
 <hr />
 </div>
@@ -424,7 +416,8 @@ div.tocify {
 </li>
 <li>Analyzed future development trends;<br />
 </li>
-<li>Made a white book about Chronic lymphoma leukemia (CLL) and Small lymphocytic lymphoma (SLL)</li>
+<li>Made a white book about Chronic lymphoma leukemia (CLL) and Small
+lymphocytic lymphoma (SLL)</li>
 </ul></li>
 </ul>
 <p><strong>Sanofi</strong><br />
@@ -436,13 +429,18 @@ div.tocify {
 </li>
 <li>Main Job:
 <ul>
-<li>Used QlikView and Excel to track sale progress from regional managers and area directors level, visualize data, and complete weekly reports;<br />
+<li>Used QlikView and Excel to track sale progress from regional
+managers and area directors level, visualize data, and complete weekly
+reports;<br />
 </li>
-<li>Assessed sale targets, estimation, and achievements for evey area;<br />
+<li>Assessed sale targets, estimation, and achievements for evey
+area;<br />
 </li>
-<li>Used Excel and Python to clean data and analyze the time it took for 543 hospitals to have monthly Lantus sales of 300 and more;<br />
+<li>Used Excel and Python to clean data and analyze the time it took for
+543 hospitals to have monthly Lantus sales of 300 and more;<br />
 </li>
-<li>Used Excel to display sale progress from several dimensions and provide solid advice for every area director</li>
+<li>Used Excel to display sale progress from several dimensions and
+provide solid advice for every area director</li>
 </ul></li>
 </ul>
 <p><strong>Center for Disease Control and Prevention</strong><br />
@@ -454,26 +452,38 @@ div.tocify {
 </li>
 <li>Main Job:
 <ul>
-<li>Collected data from hospitals and health clinics and draw different chars for further analysis. This includes the average life span, sequence of death cause, tumor spectrum, and more;<br />
+<li>Collected data from hospitals and health clinics and draw different
+chars for further analysis. This includes the average life span,
+sequence of death cause, tumor spectrum, and more;<br />
 </li>
-<li>Monitored the epidemic situation of Dengue Fever and promote preventive measures</li>
+<li>Monitored the epidemic situation of Dengue Fever and promote
+preventive measures</li>
 </ul></li>
 </ul>
 <hr />
 </div>
 <div id="skills-others" class="section level2">
 <h2>Skills &amp; Others</h2>
-<p><strong>Skills: </strong> Excel, MySql, Python and basic machine learning models<br />
+<p><strong>Skills: </strong> Excel, MySql, Python and basic machine
+learning models<br />
 <strong>Interests: </strong> Reading, Piano, Film, Outdoor Sports</p>
 <p><br> <br> <br></p>
 <p><img src="images/pic2.jpg" style = "width:75%"><br />
-<font size="1"> Photo by <u><a href="https://unsplash.com/@franki">Franki Chamaki</a></u> on <u><a href="https://unsplash.com/">Unsplash</a></u></font></p>
+<font size="1"> Photo by <u><a
+href="https://unsplash.com/@franki">Franki Chamaki</a></u> on <u><a
+href="https://unsplash.com/">Unsplash</a></u></font></p>
 <hr />
-<p><font size="5"><a href = "#top" target = "_self">Back to top</a></font></p>
+<p><font size="5"><a href = "#top" target = "_self">Back to
+top</a></font></p>
 <p><font size = "3"><strong>Qihang Wu</strong></font><br />
 <span style="color: gray">Master candidate in Biostatistics</span><br />
 dataviz, rstats</p>
-<p><a href="https://www.linkedin.com/in/qihang-wu-2b1b45193/"><i class = "fab fa-linkedin" style="font-size: 2em"></i></a> <a href="https://twitter.com/QihangWu1"><i class = "fab fa-twitter" style="font-size: 2em"></i></a> <a href="https://www.facebook.com/qihang.wu.56/"><i class = "fab fa-facebook-square" style="font-size: 2em"></i></a></p>
+<p><a
+href="https://www.linkedin.com/in/qihang-wu-2b1b45193/"><i class = "fab fa-linkedin" style="font-size: 2em"></i></a>
+<a
+href="https://twitter.com/QihangWu1"><i class = "fab fa-twitter" style="font-size: 2em"></i></a>
+<a
+href="https://www.facebook.com/qihang.wu.56/"><i class = "fab fa-facebook-square" style="font-size: 2em"></i></a></p>
 </div>
 
 
