@@ -15,7 +15,7 @@ navbar:
     - icon: fa-envelope fa-lg
       href: mailto:<qw2331@columbia.edu>
     - icon: fa-github fa-lg
-      href: http://github.com/Wu00000/
+      href: https://www.qihangwu.com/
 output:
   html_document:
     theme: united

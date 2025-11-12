@@ -13,7 +13,7 @@ Click [here](index.html) and go back to the index page.
 ----------------------------------------------
 
 ## Education
-**The George Washington University -- Washington, DC**
+**The George Washington University -- Washington, DC**  
 **Aug 2023 - Now**
 
  - Ph.D. in Biostatistics
@@ -23,7 +23,7 @@ Click [here](index.html) and go back to the index page.
 
 - M.S. in Biostatistics
   
-**University of California at Davis -- Davis, CA**
+**University of California at Davis -- Davis, CA**  
 **Sep 2018 - Jun 2019**
 
 - Exchange Program
