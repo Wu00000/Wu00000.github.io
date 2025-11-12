@@ -1,7 +1,7 @@
 ---
 title: "Resume"
 author: "Qihang Wu"
-date: "Updated on Nov 5, 2021"
+date: "Updated on Nov 11, 2025"
 output: 
   html_document:
     toc: true
@@ -13,28 +13,25 @@ Click [here](index.html) and go back to the index page.
 ----------------------------------------------
 
 ## Education
-**Columbia University -- New York, USA**  
-**2021.09 - Now**
+**The George Washington University -- Washington, DC**
+**Aug 2023 - Now**
 
-- School: Mailman School of Public Health  
-- Degree: Master  
-- Major: Biostatisics  
+ - Ph.D. in Biostatistics
+
+**Columbia University -- New York, NY**  
+**Aug 2021 - May 2023**
+
+- M.S. in Biostatistics
   
-**University of Davis -- California, USA**  
-**2018.09 - 2019.06**
+**University of California at Davis -- Davis, CA**
+**Sep 2018 - Jun 2019**
 
-- School: College of Biological Sciences  
-- Degree: Exchange 
-- Major: Biotechnology  
-- Courses: Python, Data Structure, Advanced Molecular Biology  
+- Exchange Program
   
 **Fuzhou University -- Fuzhou, China**  
-**2015.09 - 2018.06**
+**Sep 2015 - Jun 2018**
 
-- School: School of Biological Science and Engineering  
-- Degree: Bachelor  
-- Major: Biotechnology  
-- Courses: Advanced Mathematics, Linear Algebra, Probability, Experimental Design and Data Treatment  
+ - B.S. in Biotechnology
 
 ----------------------------
 
